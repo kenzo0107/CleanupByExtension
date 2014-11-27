@@ -21,12 +21,12 @@ done < ex.conf
 
 # match file not exists.
 if [ $total -eq 0  ]; then
-  echo 'NO MATCHES... \nFINISHED.'
+  echo 'NO MATCHES... \n[FINISHED]'
   exit 0
 fi
 
 # read file.
-echo "-----------DELETE FILES LIST( ${total} )------------"
+echo "-----------DELETE LIST( ${total} )------------"
 while read line
 do
   find $1 -name "${line}" -exec echo {} \;
@@ -43,9 +43,9 @@ if [ $ANS = 'y' -o $ANS = 'yes' ]; then
     find $1 -name "${line}" -exec rm {} \;
   done < ex.conf
 
-  echo '\n ALL DELETED.'
+  echo 'ALL DELETED.\n[FINISHED]'
 
 # NO
 else
-  echo '\n NO EXECUTE...\nFINISHED.'
+  echo '\n NO EXECUTE...\n[FINISHED]'
 fi
